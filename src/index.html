@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/uikit@3.16.17/dist/js/uikit.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/uikit@3.16.17/dist/js/uikit-icons.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.17/dist/css/uikit.min.css"/>
+  <meta charset="UTF-8">
+  <title>Kitchen Timer</title>
+</head>
+<body>
+  <div id="set_timer" class="uk-container uk-container-xsmall uk-child-width-expand@s uk-text-center">
+    <input id="pause" type="hidden" value="0" /><br />
+      <div>
+        <div class="uk-h1 uk-card uk-card-default uk-width-1-1" id="show_timer"><span id="show_timer">00:00:00</span></div>
+      </div>
+    
+      <div class="uk-card uk-card-default" uk-grid>
+             <div class="uk-width-1-3">
+               Hrs
+             </div>
+            <div class="uk-width-1-3">
+               Min
+             </div>
+            <div class="uk-width-1-3">
+               Sec
+             </div>
+       </div>
+    
+    
+       <div class="uk-card uk-card-default" uk-grid>
+            <div class="uk-width-1-3">
+               <input class="uk-input uk-form-width-xsmall" id="hours" maxlength="2" size="1" type="text" value="00" />
+             </div>
+            <div class="uk-width-1-3">
+               <input class="uk-input uk-form-width-xsmall" id="min" maxlength="2" size="1" type="text" value="00" />
+             </div>
+            <div class="uk-width-1-3">
+               <input class="uk-input uk-form-width-xsmall" id="sec" maxlength="2" size="2" type="text" value="00" />
+             </div>
+         </div>
+    
+         <div class="uk-card uk-card-default" uk-grid>
+            <div class="uk-width-1-3">
+               <input class="uk-width-1-2 uk-button uk-button-default"  onclick="javascript:add_time_clock('1','hours')" type="button" value="+" />
+               <input class="uk-width-1-2 uk-button uk-button-default" onclick="javascript:add_time_clock('2','hours')" type="button" value="-" />
+             </div>
+            <div class="uk-width-1-3">
+              <input class="uk-width-1-2 uk-button uk-button-default"  onclick="javascript:add_time_clock('1','min')" type="button" value="+" />
+               <input class="uk-width-1-2 uk-button uk-button-default" onclick="javascript:add_time_clock('2','min')" type="button" value="-" />
+             </div>
+            <div class="uk-width-1-3">
+               <input class="uk-width-1-2 uk-button uk-button-default"  onclick="javascript:add_time_clock('1','sec')" type="button" value="+" />
+               <input class="uk-width-1-2 uk-button uk-button-default" onclick="javascript:add_time_clock('2','sec')" type="button" value="-" />
+             </div>
+           </div>
+    
+         <div class="uk-card uk-card-default" uk-grid>
+            <div class="uk-width-1-3">
+              <input class="uk-button uk-button-danger" onclick="set_limit()" type="button" value="Start" />
+             </div>
+            <div class="uk-width-1-3">
+              <input class="uk-button uk-button-default" onclick="set_limit('1'),document.getElementById('pause').value=1" type="button" value="Pause" />
+             </div>
+            <div class="uk-width-1-3">
+               <input class="uk-button uk-button-default" onclick="rset_tmr()" type="button" value="Reset" />
+             </div>
+          </div>
+    
+         <div class="uk-card uk-card-default" uk-grid> 
+            <div class="uk-width-1-1">
+               <audio class="my_audio" controls preload="none" style="display:none">
+                <source src="http://jasonchan.website/airhorn.mp3" type="audio/mpeg">
+               </audio>
+              <button class="uk-button uk-button-default" onclick="play_audio('stop')">MUTE</button>
+            </div>
+         </div>
+        
+  </div>
+      
+ 
+  
+  
+ 
+  
+  <!-- partial -->
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script src="./script.js"></script>
+  
+  </body>
+</html>
