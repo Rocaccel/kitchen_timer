@@ -1,0 +1,45 @@
+<div id="set_timer" class="center">
+  <h1>Kitchen Timer</h1>
+<input id="pause" type="hidden" value="0" /><br />
+<table border="1" bordercolor="#000000" cellspacing="0">
+<tbody>
+<tr>
+<td align="center" colspan="3" height="25">
+<b><span id="show_timer">00:00:00</span></b></td>
+</tr>
+<tr>
+<td>
+Hrs</td>
+<td>
+Min</td>
+<td>
+Sec</td>
+</tr>
+<tr>
+<td>
+<input id="hours" maxlength="2" size="1" type="text" value="00" />:</td>
+<td>
+<input id="min" maxlength="2" size="1" type="text" value="00" />:</td>
+<td>
+<input id="sec" maxlength="2" size="2" type="text" value="00" /></td>
+</tr>
+<tr>
+<td>
+[<a href="javascript:add_time_clock('1','hours')" data-cke-saved-href="javascript:add_time_clock('1','hours')">+</a>] [<a href="javascript:add_time_clock('2','hours')">-</a>]</td>
+<td>
+[<a href="javascript:add_time_clock('1','min')">+</a>] [<a href="javascript:add_time_clock('2','min')">-</a>]</td>
+<td>
+<a href="javascript:add_time_clock('1','sec')">+</a> <a href="javascript:add_time_clock('2','sec')">-</a>]</td>
+</tr>
+<tr>
+<td align="center" colspan="3">
+<input onclick="set_limit()" type="button" value="Start" /> <input onclick="set_limit('1'),document.getElementById('pause').value=1" type="button" value="Pause" /> <input onclick="rset_tmr()" type="button" value="Reset" /></td>
+</tr>
+</tbody>
+</table>
+<br />
+  <audio class="my_audio" controls preload="none" style="display:none">
+    <source src="http://jasonchan.website/airhorn.mp3" type="audio/mpeg">
+</audio>
+  <button onclick="play_audio('stop')">STOP</button>
+ </div>
